@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="" />
+
+    <title>Tip calculator app</title>
+
+    <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">spli</h1>
+      <h1 class="logo">tter</h1>
+    </header>
+    <main class="main">
+      <section class="container">
+        <div class="calcHalf">
+          <div class="input-icon">
+            <label for="bill" class="calcHalf__lab">Bill</label>
+            <div class="pos">
+              <p class="trans" id="error">Can't be Zero</p>
+              <input
+                type="number"
+                id="bill"
+                class="calcHalf__inp"
+                onkeyup="error()"
+                onchange="knowInput()"
+                required
+              />
+            </div>
+
+            <i>$</i>
+          </div>
+
+          <h2 class="calcHalf__lab">Select Tip %</h2>
+          <div class="calcHalf__grid">
+            <button class="calcHalf__tip" id="tip" onclick="knowTip(0.05)">
+              5%</button
+            ><button class="calcHalf__tip" id="tip" onclick="knowTip(0.10)">
+              10%</button
+            ><button class="calcHalf__tip" id="tip" onclick="knowTip(0.15)">
+              15%</button
+            ><button class="calcHalf__tip" id="tip" onclick="knowTip(0.25)">
+              25%</button
+            ><button class="calcHalf__tip" id="tip" onclick="knowTip(0.50)">
+              50%</button
+            ><input
+              class="calcHalf__inp custom"
+              id="cust"
+              placeholder="Custom"
+              onchange="customKnowInput()"
+            />
+          </div>
+          <div class="input-icon">
+            <label for="nPeaple" class="calcHalf__lab">Number of People</label>
+            <div class="pos">
+              <p class="trans" id="error">Can't be Zero</p>
+              <input
+                type="number"
+                id="nPeaple"
+                class="calcHalf__inp calcHalf__nPeaple"
+                onkeyup="error()"
+                onchange="knowInput()"
+                required
+              />
+            </div>
+
+            <i class="svg"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7ZM14 7C14 8.10457 13.1046 9 12 9C10.8954 9 10 8.10457 10 7C10 5.89543 10.8954 5 12 5C13.1046 5 14 5.89543 14 7Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16 15C16 14.4477 15.5523 14 15 14H9C8.44772 14 8 14.4477 8 15V21H6V15C6 13.3431 7.34315 12 9 12H15C16.6569 12 18 13.3431 18 15V21H16V15Z"
+                  fill="currentColor"
+                /></svg
+            ></i>
+          </div>
+        </div>
+        <div class="resultHalf">
+          <section class="totalContainer">
+            <div class="resultHalf__amount">
+              <h3 class="resultHalf__titel">Tip Amount</h3>
+              <p class="resultHalf__per">/ person</p>
+            </div>
+            <h4 class="resultHalf__total" id="tipAmount">$0.00</h4>
+          </section>
+          <section class="totalContainer">
+            <div class="resultHalf__amount">
+              <h3 class="resultHalf__titel">Total</h3>
+              <p class="resultHalf__per">/ person</p>
+            </div>
+            <h4 class="resultHalf__total" id="totalAmount">$0.00</h4>
+          </section>
+
+          <button
+            class="resultHalf__reset"
+            id="resetbtn"
+            onclick="filltipAmpount()"
+          >
+            Reset
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>
+
+<!-- Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", sans-serif;
+  font-size: 62.5%;
+  background-color: hsl(185, 41%, 84%);
+}
+
+::selection {
+  background-color: hsla(172, 65%, 31%, 0.687);
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
